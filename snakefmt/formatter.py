@@ -328,7 +328,9 @@ class Formatter(Parser):
         val = self.run_black_format_str(
             val, target_indent, extra_spacing, no_nesting=True
         )
-        val = val.replace(parameter.key + '=', parameter.key + ' = ')
+        if parameter.key:
+            val = val.replace(parameter.key + '=', parameter.key + ' = ')
+
 
         # remove newline added after first docstring (black>=24.1)
         if docstring_line_index is not None and not docstring_has_extra_newline_after:
