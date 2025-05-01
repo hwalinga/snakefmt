@@ -159,7 +159,7 @@ def get_snakefiles_in_dir(
     ),
 )
 @click.help_option("--help", "-h")
-@click.version_option(__version__, "--version", "-V")
+@click.version_option(__version__ + '\nModified by Hielke Walinga for having spaces around equal sign of the parameter list.', "--version", "-V")
 @click.option("-v", "--verbose", help="Turns on debug-level logger.", is_flag=True)
 @click.pass_context
 def main(
