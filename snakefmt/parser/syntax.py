@@ -161,7 +161,7 @@ class Parameter:
 
     def __repr__(self):
         if self.has_a_key():
-            return f"{self.key}={self.value}"
+            return f"{self.key} = {self.value}"
         else:
             return self.value
 
