@@ -329,7 +329,7 @@ class Formatter(Parser):
             val, target_indent, extra_spacing, no_nesting=True
         )
         if parameter.key:
-            val = val.replace(parameter.key + '=', parameter.key + ' = ')
+            val = val.replace(f'f({parameter.key}=', f'f({parameter.key} = ')
 
 
         # remove newline added after first docstring (black>=24.1)
