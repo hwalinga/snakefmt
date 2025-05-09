@@ -329,8 +329,7 @@ class Formatter(Parser):
             val, target_indent, extra_spacing, no_nesting=True
         )
         if parameter.key:
-            val = val.replace(f'f({parameter.key}=', f'f({parameter.key} = ')
-
+            val = re.sub(rf'(f\(\s*{re.escape(parameter.key)})=', r'\1 = ', val)
 
         # remove newline added after first docstring (black>=24.1)
         if docstring_line_index is not None and not docstring_has_extra_newline_after:
